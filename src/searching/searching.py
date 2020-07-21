@@ -13,12 +13,13 @@ def binary_search(arr, target, start, end):
         # if target is smaller than the middle value
         if target < arr[mid]:
             return binary_search(arr, target, start, mid - 1)
+
         # recursively call binary_search on right half of array
         # if target is larger than the middle value
         if target > arr[mid]:
             return binary_search(arr, target, mid + 1, end)
         
-    return -1
+    return -1 # if target wasn't found
 
 
 # STRETCH: implement an order-agnostic binary search
