@@ -3,22 +3,40 @@ def merge(leftHalf, rightHalf):
     elements = len(leftHalf) + len(rightHalf)
     merged_arr = [0] * elements
     
+    # index variables for leftHalf, rightHalf, and merged_arr, respectively
     i = j = k = 0
 
-    # merge 
+    # merge both arrays until either array reaches end
     while i < len(leftHalf) and j < len(rightHalf):
+
+        # if leftHalf value is smaller or equal to rightHalf value
         if leftHalf[i] <= rightHalf[j]:
+
+            # add leftHalf value to merged_arr and increment leftHalf index
             merged_arr[k] = leftHalf[i]
             i += 1
+
+        # if leftHalf value is larger than rightHalf value
         else:
+
+            # add rightHalf value to merged_arr and increment rightHalf index
             merged_arr[k] = rightHalf[j]
             j += 1
+        
+        # increment merged_arr index after a value has been added
         k += 1
+
+    # iterate through leftHalf array
     while i < len(leftHalf):
+
+        # add leftHalf values first since they're sorted and smaller than rightHalf values
         merged_arr[k] = leftHalf[i]
         i += 1
         k += 1
+
+    # iterate through rightHalf array
     while j < len(rightHalf):
+        # add rightHalf values secind since they're sorted and larger than leftHalf values
         merged_arr[k] = rightHalf[j]
         j += 1
         k += 1
@@ -30,7 +48,7 @@ def merge_sort(arr):
     if len(arr) <= 1:
         return arr
 
-    # split array into 2 roughly equal pieces
+    # split input array into 2 roughly equal pieces
     middleIdx = len(arr) // 2
     leftHalf = arr[:middleIdx]
     rightHalf = arr[middleIdx:]
@@ -51,6 +69,6 @@ def merge_sort_in_place(arr, l, r):
     # Your code here
     pass
 
-arr1 = [3, 7, 19, 22]
-arr2 = [16]
-print(merge(arr1, arr2))
+# arr1 = [3, 7, 19, 22]
+# arr2 = [16]
+# print(merge(arr1, arr2))
