@@ -2,13 +2,19 @@
 def binary_search(arr, target, start, end):
     # Your code here
     if start <= end:
+        # calculate mid
         mid = (end + start) // 2
 
         # base case
         if target == arr[mid]:
-            return mid  
+            return mid
+        
+        # recursively call binary_search on left half of array 
+        # if target is smaller than the middle value
         if target < arr[mid]:
             return binary_search(arr, target, start, mid - 1)
+        # recursively call binary_search on right half of array
+        # if target is larger than the middle value
         if target > arr[mid]:
             return binary_search(arr, target, mid + 1, end)
         
