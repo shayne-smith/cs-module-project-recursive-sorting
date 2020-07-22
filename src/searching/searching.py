@@ -2,7 +2,7 @@
 def binary_search(arr, target, start, end):
     # Your code here
     if start <= end:
-        # calculate mid
+        # calculate middle index
         mid = (end + start) // 2
 
         # base case
