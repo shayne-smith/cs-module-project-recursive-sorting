@@ -43,6 +43,7 @@ def merge(leftHalf, rightHalf):
     return merged_arr
 
 # TO-DO: implement the Merge Sort function below recursively
+# O(N*log(N))
 def merge_sort(arr):
     # base case(s)
     if len(arr) <= 1:
